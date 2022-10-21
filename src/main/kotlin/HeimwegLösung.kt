@@ -1,4 +1,5 @@
 import java.io.File
+import kotlin.random.Random
 
 fun main() {
     val field = File("src/main/resources/wald.txt").readLines()

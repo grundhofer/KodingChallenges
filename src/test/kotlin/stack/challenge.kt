@@ -1,26 +1,22 @@
-package com.igorwojda.stack.basic
+package stack
 
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private class Stack<E> {
-    var size = 0
+    private val list = mutableListOf<E>()
+
+    val size get() = list.size
 
     fun add(element: E) {
-        TODO("not implemented")
+        list.add(element)
     }
 
-    fun remove(): E? {
-        TODO("not implemented")
-    }
+    fun remove() = if (list.isEmpty()) null else list.removeAt(list.lastIndex)
 
-    fun peek(): E? {
-        TODO("not implemented")
-    }
+    fun peek() = list.lastOrNull()
 
-    fun isEmpty(): Boolean {
-        TODO("not implemented")
-    }
+    fun isEmpty() = list.isEmpty()
 }
 
 private class Test {

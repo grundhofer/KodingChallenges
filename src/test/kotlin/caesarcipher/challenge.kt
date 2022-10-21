@@ -1,10 +1,20 @@
-package com.igorwojda.string.caesarcipher
+package caesarcipher
 
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun encodeCaesarCipher(str: String, shift: Int): String {
-    TODO("not implemented")
+    val alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+    var encoded = ""
+
+    str.forEach {
+        val indexInAlphabet = alphabet.indexOf(it)
+        val newIndex = (indexInAlphabet + shift) % alphabet.length
+        encoded += alphabet[newIndex]
+    }
+
+    return encoded
 }
 
 private class Test {
